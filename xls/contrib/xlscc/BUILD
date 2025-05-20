@@ -66,7 +66,7 @@ proto_library(
 
 cc_proto_library(
     name = "metadata_output_cc_proto",
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"],
     deps = [":metadata_output_proto"],
 )
 
@@ -86,7 +86,7 @@ build_test(
 py_binary(
     name = "get_top_func_from_proto",
     srcs = ["get_top_func_from_proto.py"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"],
     deps = [
         ":metadata_output_py_pb2",
         "@abseil-py//absl:app",
@@ -272,7 +272,7 @@ cc_binary(
         "flags.h",
         "main.cc",
     ],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"],
     deps = [
         ":hls_block_cc_proto",
         ":metadata_output_cc_proto",
