@@ -61,7 +61,7 @@ py_proto_library(
 proto_library(
     name = "metadata_output_proto",
     srcs = ["metadata_output.proto"],
-    features = ["-proto_dynamic_mode_static_link"],
+    # features = ["-proto_dynamic_mode_static_link"],
 )
 
 cc_proto_library(
@@ -72,7 +72,7 @@ cc_proto_library(
 
 py_proto_library(
     name = "metadata_output_py_pb2",
-    srcs = ["metadata_output.proto"],
+    deps = [":metadata_output_proto"],
 )
 
 build_test(
