@@ -72,7 +72,7 @@ cc_proto_library(
 
 py_proto_library(
     name = "metadata_output_py_pb2",
-    deps = [":metadata_output_proto"],
+    srcs = ["metadata_output.proto"],
 )
 
 build_test(
