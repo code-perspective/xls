@@ -381,6 +381,7 @@ cc_library(
     name = "booleanifier",
     srcs = ["booleanifier.cc"],
     hdrs = ["booleanifier.h"],
+    visibility = ["//visibility:public"],,
     deps = [
         "//xls/common/status:ret_check",
         "//xls/common/status:status_macros",
