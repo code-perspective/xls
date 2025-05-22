@@ -55,6 +55,7 @@ cc_library(
     name = "filesystem",
     srcs = ["filesystem.cc"],
     hdrs = ["filesystem.h"],
+    visibility = ["//visibility:public"],
     deps = [
         ":temp_file",
         "//xls/common/status:error_code_to_status",

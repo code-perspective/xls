@@ -127,7 +127,7 @@ cc_test(
 cc_library(
     name = "status_macros",
     hdrs = ["status_macros.h"],
-    visibility = ["//xls:xls_utility_users"],
+    visibility = ["//visibility:public"],
     deps = [
         ":status_builder",
         "//xls/common:source_location",
@@ -154,6 +154,7 @@ cc_library(
     testonly = True,
     srcs = ["matchers.cc"],
     hdrs = ["matchers.h"],
+    visibility = ["//visibility:public"],
     deps = [
         ":status_builder",
         ":status_macros",

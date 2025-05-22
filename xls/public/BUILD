@@ -85,6 +85,7 @@ cc_test(
 cc_library(
     name = "function_builder",
     hdrs = ["function_builder.h"],
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/ir:function_builder",
         "//xls/ir:source_location",
@@ -111,6 +112,7 @@ cc_library(
 cc_library(
     name = "value",
     hdrs = ["value.h"],
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/ir:bits",
         "//xls/ir:bits_ops",
@@ -140,6 +142,7 @@ cc_library(
     name = "ir",
     srcs = ["ir.cc"],
     hdrs = ["ir.h"],
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/ir",
         "//xls/ir:events",
@@ -156,6 +159,7 @@ cc_library(
     name = "ir_parser",
     srcs = ["ir_parser.cc"],
     hdrs = ["ir_parser.h"],
+    visibility = ["//visibility:public"],
     deps = [
         ":ir",
         "//xls/ir",

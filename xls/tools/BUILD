@@ -385,7 +385,7 @@ cc_library(
 cc_binary(
     name = "opt_main",
     srcs = ["opt_main.cc"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"],
     deps = [
         ":opt",
         "//xls/common:exit_status",

@@ -38,14 +38,17 @@ cc_library(
 cc_library(
     name = "ir",
     hdrs = ["ir.h"],
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/ir",
     ],
+
 )
 
 cc_library(
     name = "netlist",
     hdrs = ["netlist.h"],
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/netlist",
         "//xls/netlist:cell_library",
