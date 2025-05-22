@@ -33,7 +33,7 @@ cc_library(
     hdrs = [
         "netlist.h",
     ],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"]
     deps = [
         ":cell_library",
         "//xls/common:bits_util",
@@ -69,7 +69,7 @@ cc_library(
     hdrs = [
         "interpreter.h",
     ],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"]
     deps = [
         ":cell_library",
         ":function_parser",
@@ -116,7 +116,7 @@ cc_library(
     name = "netlist_parser",
     srcs = ["netlist_parser.cc"],
     hdrs = ["netlist_parser.h"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"]
     deps = [
         ":cell_library",
         ":netlist",
@@ -170,7 +170,7 @@ cc_library(
     name = "cell_library",
     srcs = ["cell_library.cc"],
     hdrs = ["cell_library.h"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"]
     deps = [
         ":netlist_cc_proto",
         "//xls/common/status:ret_check",
@@ -297,7 +297,7 @@ cc_library(
     name = "lib_parser",
     srcs = ["lib_parser.cc"],
     hdrs = ["lib_parser.h"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/common/status:status_macros",
         "@com_google_absl//absl/container:flat_hash_set",
@@ -330,7 +330,7 @@ cc_library(
     name = "function_extractor",
     srcs = ["function_extractor.cc"],
     hdrs = ["function_extractor.h"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"]
     deps = [
         ":lib_parser",
         ":netlist_cc_proto",
