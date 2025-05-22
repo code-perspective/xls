@@ -381,7 +381,7 @@ cc_library(
     name = "booleanifier",
     srcs = ["booleanifier.cc"],
     hdrs = ["booleanifier.h"],
-    visibility = ["//visibility:public"],,
+    visibility = ["//visibility:public"],
     deps = [
         "//xls/common/status:ret_check",
         "//xls/common/status:status_macros",
@@ -437,7 +437,7 @@ cc_test(
 cc_binary(
     name = "booleanify_main",
     srcs = ["booleanify_main.cc"],
-    visibility = ["//xls:xls_users"],
+    visibility = ["//visibility:public"],
     deps = [
         ":booleanifier",
         "//xls/common:exit_status",
