@@ -37,7 +37,7 @@ def initialize_external_repositories():
     pip_parse(
         name = "xls_pip_deps",
         requirements_lock = "@com_google_xls//dependency_support:pip_requirements_lock.txt",
-        python_interpreter_target = python_interpreter_target,
+        python_interpreter_target = "@project_python//:python",
         timeout = 600000,
     )
     initialize_boost()
