@@ -18,6 +18,7 @@
 # eventual goal that none of this is needed anymore and the file can be removed.
 
 load("@io_bazel_rules_closure//closure:repositories.bzl", "rules_closure_dependencies", "rules_closure_toolchains")
+load("@project_python//:defs.bzl", python_interpreter_target = "interpreter")
 load("@rules_7zip//:setup.bzl", "setup_7zip")  # needed by rules_hdl
 load("@rules_hdl//:init.bzl", rules_hdl_init = "init")
 load("@rules_hdl//dependency_support:dependency_support.bzl", rules_hdl_dependency_support = "dependency_support")
@@ -28,7 +29,7 @@ load("//dependency_support/llvm:initialize.bzl", initialize_llvm = "initialize")
 
 def initialize_external_repositories():
     """Calls set-up methods for external repositories that require that."""
-    rules_hdl_init(python_interpreter_target = "@project_python//:python")
+    rules_hdl_init(python_interpreter_target = python_interpreter_target)
     rules_hdl_dependency_support()
     setup_7zip()
     rules_closure_dependencies()
@@ -36,7 +37,7 @@ def initialize_external_repositories():
     pip_parse(
         name = "xls_pip_deps",
         requirements_lock = "@com_google_xls//dependency_support:pip_requirements_lock.txt",
-        python_interpreter_target = "@project_python//:python",
+        python_interpreter_target = python_interpreter_target,
         timeout = 600000,
     )
     initialize_boost()
